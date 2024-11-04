@@ -86,8 +86,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BlinkFragment.shader" />
-    <Content Include="simpleFragment.shader" />
-    <Content Include="simpleVertex.shader" />
+    <Content Include="simpleFragment.glsl" />
+    <Content Include="simpleVertex.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

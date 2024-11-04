@@ -20,10 +20,10 @@ int main(int argc, char* argv[])
 	}
 	///////////SETTING UP SDL/////////////
 	//Create a simple window
-	int width = 1000;
-	int height = 1000;
+	int width = 1280;
+	int height = 720;
 	unsigned int center = SDL_WINDOWPOS_CENTERED;
-	SDL_Window* Window = SDL_CreateWindow("OpenGL?", center, center, width, height, SDL_WINDOW_OPENGL);
+	SDL_Window* Window = SDL_CreateWindow("CrazyTrianle!!", center, center, width, height, SDL_WINDOW_OPENGL);
 	//SDL_WINDOW_OPENGL is a u32 flag !
 
 
@@ -43,10 +43,10 @@ int main(int argc, char* argv[])
 	//Put the color you want here for the background
 	glClearColor(0.0f, 0.0f, 0.2f, 1.0f);
 
-	string vertexFile = LoadShader("simpleVertex.shader");
+	string vertexFile = LoadShader("simpleVertex.glsl");
 	const char *vertexShaderSource = vertexFile.c_str();
 
-	string fragmentFile = LoadShader("simpleFragment.shader");
+	string fragmentFile = LoadShader("simpleFragment.glsl");
 	const char *fragmentShaderSource = fragmentFile.c_str();
 
 	//Describe the shape by its vertices
@@ -133,9 +133,14 @@ int main(int argc, char* argv[])
 		float speed = 2.0f;
 		float timeValue = ((float)SDL_GetTicks()/1000) * speed;
 		float trianglePosX = (sin(timeValue * speed) / 2.0f );
-		int vertexColorLocation = glGetUniformLocation(shaderProgram, "move");
+		float triangleSizeX = (sin(timeValue * speed) / 2.0f );
+		float triangleSizeY = (cos(timeValue * speed) + 2 / 2.0f );
+		float triangleSizeZ = (sin(timeValue * speed) + 4 / 2.0f );
+		int vertexLocation = glGetUniformLocation(shaderProgram, "xOffset");
+		int vertexSize = glGetUniformLocation(shaderProgram, "size");
+		glUniform3f(vertexSize,triangleSizeX,triangleSizeY,triangleSizeZ );
+		glUniform1f(vertexLocation, trianglePosX);
 		glUseProgram(shaderProgram);
-		glUniform1f(vertexColorLocation, trianglePosX);
 
 		//OMG WE FINALLY DRAW ! We use the GL_TRIANGLES primitive type
 		//We draw from vertex 0 and we will be drawing 3 vertices
