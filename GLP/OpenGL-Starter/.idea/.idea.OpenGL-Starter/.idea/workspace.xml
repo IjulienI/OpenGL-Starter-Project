@@ -8,16 +8,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17314836-5756-4bde-a17b-8130dc3dbd4a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SDL-0/simpleFragment.glsl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDL-0/simpleVertex.glsl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SDL-0/BaseFragment.glsl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SDL-0/BaseVertex.glsl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OpenGL-Starter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpenGL-Starter/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Debug/OpenGL-Starter.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/OpenGL-Starter.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SDL-0/Debug/OpenGL-Starter.exe.recipe" beforeDir="false" afterPath="$PROJECT_DIR$/SDL-0/Debug/OpenGL-Starter.exe.recipe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SDL-0/Debug/vc143.idb" beforeDir="false" afterPath="$PROJECT_DIR$/SDL-0/Debug/vc143.idb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SDL-0/Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SDL-0/Main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SDL-0/SDL-0.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/SDL-0/SDL-0.vcxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDL-0/simpleFragment.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDL-0/simpleVertex.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDL-0/simpleFragment.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/SDL-0/simpleFragment.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDL-0/simpleVertex.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/SDL-0/simpleVertex.glsl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,27 +37,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;C++ Project.SDL-0.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "C++ Project.SDL-0.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Julien\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Julien\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Julien\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\julien.soum\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\julien.soum\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\julien.soum\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="SDL-0" type="CppProject" factoryName="C++ Project">
       <configuration_1>
@@ -103,6 +103,8 @@
       <workItem from="1730731389127" duration="4649000" />
       <workItem from="1730748604750" duration="7348000" />
       <workItem from="1730757055244" duration="959000" />
+      <workItem from="1730793751232" duration="8670000" />
+      <workItem from="1730802873183" duration="2103000" />
     </task>
     <servers />
   </component>

@@ -85,6 +85,8 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BaseFragment.glsl" />
+    <Content Include="BaseVertex.glsl" />
     <Content Include="BlinkFragment.shader" />
     <Content Include="simpleFragment.glsl" />
     <Content Include="simpleVertex.glsl" />
