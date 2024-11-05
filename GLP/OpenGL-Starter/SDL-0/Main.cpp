@@ -22,8 +22,9 @@ int main(int argc, char* argv[])
 	}
 	///////////SETTING UP SDL/////////////
 	//Create a simple window
-	int width = 1280;
-	int height = 720;
+	int width = 1000;
+	int height = 1000;
+	float aspectRatio = static_cast<float>(width) / static_cast<float>(height);
 	unsigned int center = SDL_WINDOWPOS_CENTERED;
 	SDL_Window* Window = SDL_CreateWindow("CrazyTrianle!!", center, center, width, height, SDL_WINDOW_OPENGL);
 	//SDL_WINDOW_OPENGL is a u32 flag !
@@ -45,38 +46,47 @@ int main(int argc, char* argv[])
 	//Put the color you want here for the background
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
-	string vertexFile = LoadShader("simpleVertex.glsl");
-	const char *vertexShaderSource = vertexFile.c_str();
+	string vertexAppleFile = LoadShader("simpleVertex.glsl");
+	const char *vertexAppleShaderSource = vertexAppleFile.c_str();
 
-	string fragmentFile = LoadShader("simpleFragment.glsl");
-	const char *fragmentShaderSource = fragmentFile.c_str();
-
-	string vertexFile1 = LoadShader("BaseVertex.glsl");
-	const char *fixVertexShaderSource = vertexFile1.c_str();
-
-	string fragmentFile1 = LoadShader("BaseFragment.glsl");
-	const char *fixFragmentShaderSource = fragmentFile1.c_str();
+	string fragmentAppleFile = LoadShader("simpleFragment.glsl");
+	const char *fragmentAppleShaderSource = fragmentAppleFile.c_str();
 
 	//Describe the shape by its vertices
 	float vertices[]={
-		// losange
-		0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f,
-	   -0.5f, 0.0f, 0.0f,  0.0f, 1.0f, 0.0f,   		
-		0.5f, 0.0f, 0.0f,  1.0f, 0.0f, 0.0f, 
-		0.0f, -0.5f, 0.0f,	1.0f, 0.0f, 0.0f,
-		//Crown
-		//Strip
-		-0.4f, 0.2f, 0.0f, 0.0f, 0.0f, 1.0f,
-		-0.4f, -0.2f, 0.0f, 0.1f, 0.0f, 0.0f,
-		-0.2f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f,
-		0.0f, -0.2f, 0.0f, 0.0f, 0.0f, 1.0f,
-		 0.2f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f,
-		0.4f, -0.2f, 0.0f, 0.0f, 0.0f, 1.0f,
-		0.4f, 0.2f, 0.0f, 0.0f, 0.0f, 1.0f,
-		//SimpleTriangle
-		-0.2f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f,
-		0.0f, 0.2f, 0.0f,  0.0f, 0.0f, 1.0f,
-		0.2f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f		
+		//Apple
+		//FAN
+		0.0f, 0.0f, 0.0f,	0.0f,0.0f,0.0f,
+		-0.1f, 0.2f, 0.0f,	0.0f,0.0f,0.0f,
+		-0.2f, 0.0f, 0.0f,	0.0f,0.0f,0.0f,
+		-0.1f, -0.2f, 0.0f,	0.0f,0.0f,0.0f,
+		0.1f, -0.2f, 0.0f,	0.0f,0.0f,0.0f,
+		0.1f, -0.2f, 0.0f,	0.0f,0.0f,0.0f,
+		0.2f, -0.1f, 0.0f,	0.0f,0.0f,0.0f,
+		0.1f, -0.05f, 0.0f,	0.0f,0.0f,0.0f,
+		0.1f, 0.05f, 0.0f,	0.0f,0.0f,0.0f,
+		0.2f, 0.1f, 0.0f,	0.0f,0.0f,0.0f,
+		0.1f, 0.2f, 0.0f,	0.0f,0.0f,0.0f,
+		-0.1f, 0.2f, 0.0f,	0.0f,0.0f,0.0f,
+		//STRIP
+		0.0f, 0.2f, 0.0f,	0.0f,0.0f,0.0f,
+		0.0f, 0.3f, 0.0f,	0.0f,0.0f,0.0f,
+		0.1f, 0.25f, 0.0f,	0.0f,0.0f,0.0f,
+		0.1f, 0.35f, 0.0f,	0.0f,0.0f,0.0f,
+		//Snake
+		//HEAD FAN
+		0.0f, 0.0f, 0.0f,	0.0f,0.0f,0.0f,
+		-0.05f, 0.04f, 0.0f,	0.0f,0.0f,0.0f,
+		-0.01f, 0.05f, 0.0f,	0.0f,0.0f,0.0f,
+		0.02f, 0.04f, 0.0f,	0.0f,0.0f,0.0f,
+		0.05f, 0.02f, 0.0f,	0.0f,0.0f,0.0f,
+		0.06f, 0.0f, 0.0f,	0.0f,0.0f,0.0f,
+		0.05f, -0.02f, 0.0f,	0.0f,0.0f,0.0f,
+		0.02f, -0.04f, 0.0f,	0.0f,0.0f,0.0f,
+		-0.01f, -0.05f, 0.0f,	0.0f,0.0f,0.0f,
+		-0.05f, -0.04f, 0.0f,	0.0f,0.0f,0.0f,
+		-0.05f, 0.0f, 0.0f,	0.0f,0.0f,0.0f,
+		-0.05f, 0.04f, 0.0f,	0.0f,0.0f,0.0f,
 	};
 	
 	//Create an ID to be given at object generation
@@ -88,7 +98,7 @@ int main(int argc, char* argv[])
 	vertexShaderID = glCreateShader(GL_VERTEX_SHADER);
 
 	//now that we have vertex shader, let's put the code text inside
-	glShaderSource(vertexShaderID, 1, &vertexShaderSource, nullptr);
+	glShaderSource(vertexShaderID, 1, &vertexAppleShaderSource, nullptr);
 
 	//compile shaders
 	glCompileShader(vertexShaderID);
@@ -96,18 +106,18 @@ int main(int argc, char* argv[])
 	//Do the same with the fragment shader !
 	unsigned int fragmentShaderID;
 	fragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
-	glShaderSource(fragmentShaderID, 1, &fragmentShaderSource, nullptr);
+	glShaderSource(fragmentShaderID, 1, &fragmentAppleShaderSource, nullptr);
 	glCompileShader(fragmentShaderID);
 
-	unsigned int fixVertexShaderID;
-	fixVertexShaderID = glCreateShader(GL_VERTEX_SHADER);
-	glShaderSource(fixVertexShaderID, 1, &fixVertexShaderSource, nullptr);
-	glCompileShader(fixVertexShaderID);
-
-	unsigned int fixFragmentShaderID;
-	fixFragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
-	glShaderSource(fixFragmentShaderID, 1, &fixFragmentShaderSource, nullptr);
-	glCompileShader(fixFragmentShaderID);
+	// unsigned int fixVertexShaderID;
+	// fixVertexShaderID = glCreateShader(GL_VERTEX_SHADER);
+	// glShaderSource(fixVertexShaderID, 1, &fixVertexShaderSource, nullptr);
+	// glCompileShader(fixVertexShaderID);
+	//
+	// unsigned int fixFragmentShaderID;
+	// fixFragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
+	// glShaderSource(fixFragmentShaderID, 1, &fixFragmentShaderSource, nullptr);
+	// glCompileShader(fixFragmentShaderID);
 
 	unsigned int shaderProgram;
 	shaderProgram = glCreateProgram();
@@ -115,8 +125,8 @@ int main(int argc, char* argv[])
 	unsigned int fixShaderProgram;
 	fixShaderProgram = glCreateProgram();
 
-	glAttachShader(fixShaderProgram, fixVertexShaderID);
-	glAttachShader(fixShaderProgram, fixFragmentShaderID);
+	// glAttachShader(fixShaderProgram, fixVertexShaderID);
+	// glAttachShader(fixShaderProgram, fixFragmentShaderID);
 
 	//attach shaders to use into the program
 	glAttachShader(shaderProgram, vertexShaderID);
@@ -158,6 +168,7 @@ int main(int argc, char* argv[])
 	float posY = 0.0f;
 	bool left = false;
 	bool up = true;
+	int SnakeRotation = 1;
 
 	float lastDeltaTime = 0.0f;
 	float deltaTime = 0.0f;
@@ -171,6 +182,12 @@ int main(int argc, char* argv[])
 			switch (event.type) {
 			case SDL_QUIT:
 				isRunning = false;
+				break;
+			case SDL_KEYDOWN:
+				if(event.key.keysym.sym == SDLK_UP) SnakeRotation = 2;			
+				if(event.key.keysym.sym == SDLK_DOWN) SnakeRotation = 3;
+				if(event.key.keysym.sym == SDLK_LEFT) SnakeRotation = 0;
+				if(event.key.keysym.sym == SDLK_RIGHT) SnakeRotation = 1;
 				break;
 			default:
 				break;
@@ -190,48 +207,34 @@ int main(int argc, char* argv[])
 		// glUniform3f(vertexSize,triangleSizeX,triangleSizeY,triangleSizeZ );
 		// glUniform1f(vertexLocation, trianglePosX);
 
-		glUseProgram(shaderProgram);
-		float speed = 0.5f;
-		float tickTime = (float)SDL_GetTicks()/1000;
-		deltaTime = tickTime - lastDeltaTime;
-		lastDeltaTime = tickTime;
 		
-		if(!left)posX += speed * deltaTime;
-		else posX -= speed * deltaTime;
-
-		if(up) posY += speed * deltaTime;
-		else posY -= speed * deltaTime;
-
-		if(posX >= 0.8f)
-		{
-			left = true;
-			randomColor(shaderProgram);
-		}
-		else if(posX <= -0.8)
-		{
-			left = false;
-			randomColor(shaderProgram);
-		}
-
-		if(posY >= 0.9f)
-		{
-			up = false;
-			randomColor(shaderProgram);
-		}
-		else if(posY <= -0.9f)
-		{
-			up = true;
-			randomColor(shaderProgram);
-		}
-		
-		int vertexLocation = glGetUniformLocation(shaderProgram, "offsets");
-		glUniform2f(vertexLocation, posX, posY);
-
 		//OMG WE FINALLY DRAW ! We use the GL_TRIANGLES primitive type
-		//We draw from vertex 0 and we will be drawing 3 vertices			
-		glDrawArrays(GL_TRIANGLE_STRIP, 4, 7);
-		glDrawArrays(GL_TRIANGLES, 11,3);
-		
+		//We draw from vertex 0 and we will be drawing 3 vertices
+		int vertexAspectRatio = glGetUniformLocation(shaderProgram, "aspectRatio");
+		int vertexSize = glGetUniformLocation(shaderProgram, "size");		
+		int vertexColor = glGetUniformLocation(shaderProgram, "color");
+		int vertexLocation = glGetUniformLocation(shaderProgram, "offsets");
+		int vertexRotation = glGetUniformLocation(shaderProgram, "rotation");
+
+		float timeValue = (float)SDL_GetTicks()/1000;
+		float redColor = (sin(timeValue) / 2.0f) + 0.5f;
+		float greenColor = (sin(timeValue + 2) / 2.0f) + 0.5f;
+		float blueColor = (sin(timeValue + 4) / 2.0f) + 0.5f;
+		glUseProgram(shaderProgram);
+		glUniform1f(vertexAspectRatio, aspectRatio);
+		glUniform3f(vertexSize, 0.75f, 0.75f,0.75f);
+		glUniform3f(vertexColor, redColor, greenColor, blueColor);
+		glUniform2f(vertexLocation, 0.0f, 0.0f);
+		glUniform1i(vertexRotation, SnakeRotation);
+		glDrawArrays(GL_TRIANGLE_FAN, 16,12);
+
+		//Apple
+		glUniform3f(vertexColor, 1.0f, 0.341f, 0.29f);
+		glUniform3f(vertexSize, 0.2f, 0.2f, 0.2f);
+		glUniform2f(vertexLocation, 0.5f, 0.5f);
+		glUniform1i(vertexRotation, 1);
+		glDrawArrays(GL_TRIANGLE_FAN, 0, 12);
+		glDrawArrays(GL_TRIANGLE_STRIP, 12,4);
 		//glUseProgram(fixShaderProgram);
 		//glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 		

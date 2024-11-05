@@ -8,10 +8,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17314836-5756-4bde-a17b-8130dc3dbd4a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SDL-0/BaseFragment.glsl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SDL-0/BaseVertex.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpenGL-Starter/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpenGL-Starter/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpenGL-Starter/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpenGL-Starter/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OpenGL-Starter/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpenGL-Starter/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OpenGL-Starter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OpenGL-Starter/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Debug/OpenGL-Starter.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/OpenGL-Starter.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDL-0/BaseFragment.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/SDL-0/BaseFragment.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDL-0/BaseVertex.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/SDL-0/BaseVertex.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDL-0/BlinkFragment.shader" beforeDir="false" afterPath="$PROJECT_DIR$/SDL-0/BlinkFragment.shader" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SDL-0/Debug/OpenGL-Starter.exe.recipe" beforeDir="false" afterPath="$PROJECT_DIR$/SDL-0/Debug/OpenGL-Starter.exe.recipe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SDL-0/Debug/vc143.idb" beforeDir="false" afterPath="$PROJECT_DIR$/SDL-0/Debug/vc143.idb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SDL-0/Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SDL-0/Main.cpp" afterDir="false" />
@@ -27,6 +31,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -39,9 +53,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "C++ Project.SDL-0.executor": "Run",
+    "C++ Project.SDL-0.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Snake",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -105,6 +119,7 @@
       <workItem from="1730757055244" duration="959000" />
       <workItem from="1730793751232" duration="8670000" />
       <workItem from="1730802873183" duration="2103000" />
+      <workItem from="1730812869929" duration="11464000" />
     </task>
     <servers />
   </component>
